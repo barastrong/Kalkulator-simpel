@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p id="result"></p>
+<body>
+    <script>
+        var output = parseInt(prompt("Input angka 1,2,3 dan 4 untuk \n 1. Penjumlahan \n 2. Penggurangan \n 3. Perkalian \n 4. Pembagian"));
+
+        switch (output) {
+                    case 1:
+                     angka1 =parseInt(prompt("Input angka pertama"));
+                     angka2 =parseInt(prompt("Input angka kedua"));
+                     menu = "+";
+                        result = angka1 + angka2;
+                        break;
+                    case 2:
+                    angka1 =parseInt(prompt("Input angka pertama"));
+                    angka2 =parseInt(prompt("Input angka kedua"));
+                    menu = "-";
+                        result = angka1 - angka2;
+                        break;
+                    case 3:
+                    angka1 =parseInt(prompt("Input angka pertama"));
+                    angka2 =parseInt(prompt("Input angka kedua"));
+                    menu ="*";
+                        result = angka1 * angka2;
+                        break;
+                    case 4:
+                    angka1 =parseInt(prompt("Input angka pertama"));
+                    angka2 =parseInt(prompt("Input angka kedua"));
+                    menu = "/";
+                        if (angka2 == 0) {
+                            alert("Pembagi tidak boleh 0");
+                            break;
+                        }
+                        result = angka1 / angka2;
+                        break;
+                    default:
+                        alert("Pilihan operasi salah");
+                        break;
+                }
+                document.getElementById("result").innerHTML =`Hasil: ${angka1} ${menu} ${angka2} = ${result}`;
+    </script>
+</body>
+</html>

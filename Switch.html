@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Hitung Hitungan Matematik</h1>
+    <button onclick="Hitung()">Hitung Hitungan</button>
+    <p id="result"></p>
+    <script>
+        function Hitung() {
+            let Lanjut = prompt("Input angka \n 1. Penjumlahan \n 2. Penggurangan \n 3. Pembagian \n 4. Perbagian");
+            let result = 0;
+            let menu = "";
+
+            switch (Lanjut) {
+                case "1":
+                Angka1 = parseInt(prompt("Input Angka Pertama untuk operasi:"));
+                Angka2 = parseInt(prompt("Input Angka Kedua untuk operasi:"));
+                    menu = "+";
+                    result = Angka1 + Angka2;
+                    break;
+                case "2":
+                Angka1 = parseInt(prompt("Input Angka Pertama untuk operasi:"));
+                Angka2 = parseInt(prompt("Input Angka Kedua untuk operasi:"));
+                    menu = "-";
+                    result = Angka1 - Angka2;
+                    break;
+                case "3":
+                Angka1 = parseInt(prompt("Input Angka Pertama untuk operasi:"));
+                Angka2 = parseInt(prompt("Input Angka Kedua untuk operasi:"));
+                    menu = "*";
+                    result = Angka1 * Angka2;
+                    break;
+                case "4":
+                Angka1 = parseInt(prompt("Input Angka Pertama untuk operasi:"));
+                Angka2 = parseInt(prompt("Input Angka Kedua untuk operasi:"));
+                    menu = "/";
+                    result = Angka1 / Angka2;
+                    if (angka2 == 0) {
+                            alert("Pembagi tidak boleh 0");
+                            break;
+                        }
+                    break;
+                default:
+                    result = "Operasi tidak valid";
+                    break;
+            }
+            let resultElement = document.getElementById("result");
+            resultElement.style.opacity = 0;
+            resultElement.innerHTML = `Hasil: ${Angka1} ${menu} ${Angka2} = ${result}`;
+            resultElement.style.animation = "none";
+            setTimeout(() => {
+                resultElement.style.animation = "";
+            }, 15);
+        }
+    </script>
+</body>
+</html>

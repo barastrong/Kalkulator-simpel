@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4169e1;
+        }
+        h2 {
+            color: #4682b4;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="login()">Login</button>
+    <script>
+        function login() {
+            let username = prompt("Masukkan username:");
+            let password = prompt("Masukkan password:");
+
+            if (username === `${username}` && password === "admin") {
+                alert("Login berhasil!");
+                document.body.innerHTML = `
+                <div class="container">
+                    <h1>Welcome To My Website</h1>
+                    <h2>Selamat datang, ${username}!</h2>
+                    <p>We are delighted to have you here. Explore our website to find interesting content, resources, and much more.</p>
+                    <p>Feel free to browse through our sections, and if you have any questions, do not hesitate to reach out to us.</p>
+                    <p>Enjoy your stay!</p>
+                </div>`;
+            } else {
+                alert("Login gagal! Username dan password salah.");
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
